@@ -1,0 +1,154 @@
+<!-- about.html --><!DOCTYPE html><html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>আমাদের সম্পর্কে</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+  html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.container {
+  flex: 1;
+}
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f4;
+      background-image: url(logo.jpg);
+    }
+    
+    header {
+      background-color: #D32626;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      color: white;
+    }
+    header h1 {
+      margin: 0;
+      margin-left: 30px;
+    }
+    header a {
+      color: white;
+      text-decoration: none;
+      font-size: 15px;
+      padding: 8px 12px;
+      border: 1px solid white;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+    header a:hover {
+      background: white;
+      color: darkgreen;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      background-image: url(logo.png);
+      background-size: 80px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .container h2 {
+      color: #D32626;
+      margin-bottom: 20px;
+    }
+    .container p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #333;
+    }
+        footer {
+      background: #D32626;
+      color: #ccc;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 300;
+      border-top: 2px solid #D32626;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+      padding: 20px 10px;
+    }
+      .social-icons a {
+      color: white;
+      margin: 0 8px;
+      font-size: 18px;
+    }
+
+    .social-icons a:hover {
+      color: #ff4444;
+    }
+
+    .footer-links a {
+      color: #eee;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    .footer-links a:hover {
+      color: red;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+  header img{
+     width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 15px;
+     }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="logo" />
+    <h2>আমাদের সম্পর্কে</h2>
+    <a href="index.html"><i class="fa fa-home"></i> হোম</a>
+  </header> 
+  <div class="container">
+    <h2>আমাদের লক্ষ্য ও উদ্দেশ্য</h2>
+    <p>
+      ব্লাড ব্যাংক একটি সামাজিক উদ্যোগ যা জরুরি রক্তের প্রয়োজনে মানুষের পাশে দাঁড়াতে সাহায্য করে। আমাদের উদ্দেশ্য হচ্ছে এমন একটি প্ল্যাটফর্ম তৈরি করা, যেখানে রক্তদাতারা এবং রক্তগ্রহীতারা একে অপরের সাথে দ্রুত এবং সহজে সংযুক্ত হতে পারে।
+    </p>
+    <p>
+      আমরা বিশ্বাস করি, প্রযুক্তির মাধ্যমে সমাজে একটি বড় পরিবর্তন আনা সম্ভব। এই প্ল্যাটফর্মের মাধ্যমে, আমরা স্বেচ্ছাসেবী রক্তদাতাদের তথ্য সুরক্ষিতভাবে সংরক্ষণ করে সহজে খুঁজে পাওয়ার সুবিধা প্রদান করি।
+    </p>
+  </div>  
+ <footer>
+    <div class="footer-content">
+      <p>চালিত হয়েছে ব্লাড ব্যাংক দ্বারা | © ২০২৫ সকল অধিকার সংরক্ষিত</p>
+      <p>যোগাযোগ: <a href="mailto:help@bloodbank.com">help@bloodbank.com</a></p>
+      <div class="footer-links">
+        <a href="about.html">আমাদের সম্পর্কে</a> |
+        <a href="contact.html">যোগাযোগ</a> |
+        <a href="privacy.html">গোপনীয়তা নীতি</a>
+      </div>
+    </div>
+    <div class="social-icons">
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </footer>
+</body>
+</html>

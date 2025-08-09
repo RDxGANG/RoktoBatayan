@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ঢাকা - রক্তদাতা তালিকা</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background: #D32626;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+header a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+header a:hover {
+  color: #ffd5d5;
+}
+.search-bar {
+  padding: 15px;
+  text-align: center;
+}
+.search-bar input {
+  padding: 10px;
+  width: 85%;
+  max-width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  outline: none;
+  font-size: 14px;
+}
+.donor-list {
+  max-width: 900px;
+  margin: auto;
+  padding: 10px;
+}
+.donor-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 15px;
+  margin: 12px 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.donor-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+.blood-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+.blood-Ap { background: #ff4d4d; }
+.blood-Aneg { background: #cc0000; }
+.blood-Bp { background: #ff8533; }
+.blood-Bneg { background: #b34700; }
+.blood-Op { background: #ff1a1a; }
+.blood-Oneg { background: #800000; }
+.blood-ABp { background: #9933ff; }
+.blood-ABneg { background: #660066; }
+
+.donor-info {
+  flex: 1;
+  margin-left: 15px;
+}
+.donor-info h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+.donor-info p {
+  margin: 3px 0;
+  font-size: 14px;
+  color: #555;
+}
+.call-btn {
+  background: #28a745;
+  color: white;
+  padding: 10px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 18px;
+  transition: background 0.3s;
+}
+.call-btn:hover {
+  background: #218838;
+}
+@media (max-width: 600px) {
+  .donor-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .donor-info {
+    margin: 10px 0 0 0;
+  }
+}
+.donor-count {
+  background: #fff0f0;
+  color: #D32626;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  padding: 8px;
+  border-bottom: 1px solid #ffd5d5;
+}
+footer {
+      background: #D32626;
+      color: #ccc;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 300;
+      border-top: 2px solid #D32626;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+      padding: 20px 10px;
+    }
+
+    .social-icons a {
+      color: white;
+      margin: 0 8px;
+      font-size: 18px;
+    }
+
+    .social-icons a:hover {
+      color: #ff4444;
+    }
+
+    .footer-links a {
+      color: #eee;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    .footer-links a:hover {
+      color: red;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+</style>
+</head>
+<body>
+
+<header>
+  <span><i class="fa-solid fa-droplet"></i>ঢাকা - রক্তদাতা তালিকা</span>
+  <a href="index.html"><i class="fa fa-home"></i> হোম</a>
+</header>
+<div id="donorList"></div>
+
+<div class="donor-count" id="donorCount"></div> 
+<!-- New donor count -->
+
+<div class="search-bar">
+  <input type="text" id="search" placeholder="নাম বা ব্লাড গ্রুপ দিয়ে খুঁজুন...">
+</div>
+
+<div class="donor-list" id="donorList">
+  <div class="donor-card">
+    <div class="blood-badge blood-Ap"><i class="fa-solid fa-tint"></i> A+</div>
+    <div class="donor-info">
+      <h3>রহিম উদ্দিন</h3>
+      <p>ঢাকা</p>
+      <p>01724557043</p>
+    </div>
+    <a href="tel:017XXXXXXXX" class="call-btn"><i class="fa fa-phone"></i> Call Now</a>
+  </div>
+
+  <div class="donor-card">
+    <div class="blood-badge blood-Oneg"><i class="fa-solid fa-tint"></i> O-</div>
+    <div class="donor-info">
+      <h3>করিম মিয়া</h3>
+      <p>ঢাকা</p>
+      <p>01724557043</p>
+    </div>
+    <a href="tel:018XXXXXXXX" class="call-btn"><i class="fa fa-phone"></i> Call Now</a>
+  </div>
+
+  <div class="donor-card">
+    <div class="blood-badge blood-ABp"><i class="fa-solid fa-tint"></i> AB+</div>
+    <div class="donor-info">
+      <h3>সাইফুল ইসলাম</h3>
+      <p>ঢাকা</p>
+      <p>01724557043</p>
+    </div>
+    <a href="tel:019XXXXXXXX" class="call-btn"><i class="fa fa-phone"></i> Call now</a>
+  </div>
+  <div class="donor-card">
+    <div class="blood-badge blood-ABp"><i class="fa-solid fa-tint"></i> AB+</div>
+    <div class="donor-info">
+      <h3>সাইফুল ইসলাম</h3>
+      <p>ঢাকা</p>
+      <p>01724557043</p>
+    </div>
+    <a href="tel:019XXXXXXXX" class="call-btn"><i class="fa fa-phone"></i> Call now</a>
+  </div>
+  <div class="donor-card">
+    <div class="blood-badge blood-ABp"><i class="fa-solid fa-tint"></i> AB+</div>
+    <div class="donor-info">
+      <h3>সাইফুল ইসলাম</h3>
+      <p>ঢাকা</p>
+      <p>01724557043</p>
+    </div>
+    <a href="tel:019XXXXXXXX" class="call-btn"><i class="fa fa-phone"></i> Call Now</a>
+  </div>
+</div>
+
+  <footer>
+    <div class="footer-content">
+      <p>চালিত হয়েছে ব্লাড ব্যাংক দ্বারা | © ২০২৫ সকল অধিকার সংরক্ষিত</p>
+      <p>যোগাযোগ: <a href="mailto:help@bloodbank.com">help@bloodbank.com</a></p>
+      <div class="footer-links">
+        <a href="about.html">আমাদের সম্পর্কে</a> |
+        <a href="contact.html">যোগাযোগ</a> |
+        <a href="privacy.html">গোপনীয়তা নীতি</a>
+      </div>
+    </div>
+    <div class="social-icons">
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </footer>
+
+<script>
+document.getElementById("search").addEventListener("keyup", function() {
+  let filter = this.value.toLowerCase();
+  let donors = document.querySelectorAll(".donor-card");
+  donors.forEach(donor => {
+    let name = donor.querySelector(".donor-info h3").innerText.toLowerCase();
+    let blood = donor.querySelector(".blood-badge").innerText.toLowerCase();
+    donor.style.display = (name.includes(filter) || blood.includes(filter)) ? "" : "none";
+  });
+});
+
+// Show total donor count on page load
+function updateDonorCount() {
+  let total = document.querySelectorAll(".donor-card").length;
+  document.getElementById("donorCount").innerText = "মোট রক্তদাতা: " + total;
+}
+updateDonorCount();
+
+// Update count also when filtering
+document.getElementById("search").addEventListener("keyup", function() {
+  let filter = this.value.toLowerCase();
+  let donors = document.querySelectorAll(".donor-card");
+  let visibleCount = 0;
+  donors.forEach(donor => {
+    let name = donor.querySelector(".donor-info h3").innerText.toLowerCase();
+    let blood = donor.querySelector(".blood-badge").innerText.toLowerCase();
+    if (name.includes(filter) || blood.includes(filter)) {
+      donor.style.display = "";
+      visibleCount++;
+    } else {
+      donor.style.display = "none";
+    }
+  });
+  document.getElementById("donorCount").innerText = "মোট রক্তদাতা: " + visibleCount;
+});
+
+
+</script>
+
+</body>
+</html>
