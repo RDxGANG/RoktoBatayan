@@ -1,4 +1,5 @@
-<!DOCTYPE html>  <html lang="bn">  
+<!DOCTYPE html>  
+<html lang="bn">  
 <head>  
   <meta charset="UTF-8" />  
   <meta name="viewport" content="width=device-width, initial-scale=1" />  
@@ -249,12 +250,12 @@ right: 15px;
 z-index: 1001;
 }
 .main-btn {
-width: 55px;
-height: 55px;
+width: 40px;
+height: 40px;
 border-radius: 50%;
 background-color: #D32626;
 color: white;
-font-size: 24px;
+font-size: 20px;
 border: none;
 cursor: pointer;
 transition: transform 0.4s ease;
@@ -265,6 +266,7 @@ position: relative;
 width: 0;
 height: 0;
 }
+
 .circle-item {
 position: absolute;
 right: 0;
@@ -300,6 +302,189 @@ transform: rotate(-45deg) translateX(-120px) rotate(45deg);
 transform: rotate(-90deg) translateX(-120px) rotate(90deg);
 }
 
+     .latest-info-container {
+     background-color:  navajowhite; /* Red background */
+            color: black;
+            padding: 8px 0;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        
+        .latest-info-label {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            background-color: #cc0000; /* Darker red for the label */
+            padding: 8px 15px;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+        }
+        
+        .latest-info-label:after {
+            content: "";
+            position: absolute;
+            right: -15px;
+            top: 0;
+            width: 0;
+            height: 0;
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            border-left: 16px solid #cc0000;
+        }
+        
+        .marquee {
+            white-space: nowrap;
+            display: inline-block;
+            padding-left: 120px; /* Space for the label */
+            animation: marquee 15s linear infinite;
+        }
+        
+        @keyframes marquee {
+            0% { transform: translateX(15%); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        .marquee-content {
+            display: inline-block;
+            padding-right: 50px; /* Space between repetitions */
+        }
+
+
+.donor-tips {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+  background: transparent;
+  border-radius: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.donor-tips.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.donor-tips h2 {
+  font-size: 28px;
+  margin-bottom: 25px;
+  color: #c62828;
+  position: relative;
+}
+
+.tips-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.tip {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0px 6px 20px rgba(0,0,0,0.08);
+  transform: translateY(40px);
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+.tip span, .tip p {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.6s ease;
+}
+
+.tip.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.tip.show span, .tip.show p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.icon {
+  font-size: 28px;
+  margin-right: 12px;
+  animation: pulse 2s infinite;
+}
+
+/* Pulse effect for icons */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+
+.hero-text {
+  height: auto;           /* let the section size depend on content */
+  padding: 40px 20px;     /* controls top and bottom free space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  overflow: hidden;
+  flex-direction: column; /* ensures perfect vertical centering if needed */
+}
+
+.hero-text h1 {
+  font-size: 4rem;
+  font-weight: 350;
+  color: #000;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  transform: skewX(-25deg);
+  opacity: 0;
+ max-width: 90%;
+margin: 0 auto;
+}
+
+/* Draw-in animation */
+.hero-text.visible h1 {
+  animation: drawIn 1s ease forwards;
+}
+
+/* Shine effect */
+.hero-text h1::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%);
+  transform: skewX(-25deg);
+  transition: left 1s;
+}
+
+.hero-text.visible h1::after {
+  animation: shine 1.2s ease forwards 1s;
+}
+
+/* Keyframes */
+@keyframes drawIn {
+  0% { transform: skewX(-25deg) translateX(-100%); opacity: 0; }
+  100% { transform: skewX(0deg) translateX(0); opacity: 1; }
+}
+
+@keyframes shine {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
   </style>  
 </head>  
 <body>    <!-- Header -->    <header>  
@@ -340,13 +525,52 @@ transform: rotate(-90deg) translateX(-120px) rotate(90deg);
   <li><a href="maimansing.html">ময়মনসিংহ</a></li>  
 </ul>  
 
-<!-- Info -->  
-<div class="content">  
-  <p>  
-   Platform to connect blood searchers with donors .  
-  </p>  
+    <div class="latest-info-container">
+        <div class="latest-info-label">Donation Info</div>
+        <div class="marquee">
+  <div class="marquee-content">
+পুরুষরা প্রতি ৩ মাসে একবার রক্ত দান করতে পারেন , নারীরা প্রতি ৪ মাসে একবার রক্ত দান করতে পারেন। একবার রক্ত দান তিনজন মানুষের জীবন বাঁচাতে পারে।
+ <div class="marquee-content">
+একবার রক্ত দান তিনজন মানুষের জীবন বাঁচাতে পারে।
 </div>
+  </div> 
+     </div>
+      </div>
 
+<!-- Info -->  
+<section class="hero-text">
+  <h1>Platform to Connect Blood Searchers with Donors</h1>
+</section>  
+
+<section class="donor-tips">
+  <h2>🩸 Blood Donor Tips</h2>
+  <div class="tips-container">
+    <div class="tip">
+      <span class="icon">💧</span>
+      <p>Drink plenty of water before and after donating.</p>
+    </div>
+    <div class="tip">
+      <span class="icon">🥩</span>
+      <p>Eat iron-rich foods like spinach, beans, or lean meat.</p>
+    </div>
+    <div class="tip">
+      <span class="icon">🗓️</span>
+      <p>Men can donate every 3 months; women every 4 months.</p>
+    </div>
+    <div class="tip">
+      <span class="icon">🩸</span>
+      <p>One donation can save up to three lives.</p>
+    </div>
+    <div class="tip">
+      <span class="icon">🛑</span>
+      <p>Rest 10 minutes after donating to stay healthy.</p>
+    </div>
+    <div class="tip">
+      <span class="icon">📅</span>
+      <p>Mark your next donation date on your calendar.</p>
+    </div>
+  </div>
+</section>
   </div>  
   <!-- Donor Stats Section -->  
 <section style="max-width: 900px; margin: 40px auto; text-align: center; padding: 20px;">  
@@ -354,19 +578,21 @@ transform: rotate(-90deg) translateX(-120px) rotate(90deg);
   <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">  <div style="flex: 1 1 200px; background: white; border-radius: 10px; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">  
   <svg width="50" height="50" fill=" #D32626" viewBox="0 0 24 24"><path d="M12 2.69l-.72.71C7.36 7.36 4 11.27 4 14.5 4 17.54 6.46 20 9.5 20c1.74 0 3.41-.81 4.5-2.09C15.09 19.19 16.76 20 18.5 20 21.54 20 24 17.54 24 14.5c0-3.23-3.36-7.14-7.28-11.1L12 2.69z"/></svg>  
   <h3 style="margin: 10px 0;">মোট রক্তদাতা</h3>  
-  <p style="font-size: 22px; font-weight: bold; color: black;">5+</p>  
+  <p style="font-size: 22px; font-weight: bold; color: black;">5</p>  
 </div>  
 
 <div style="flex: 1 1 200px; background: white; border-radius: 10px; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">  
   <svg width="50" height="50" fill=" #D32626" viewBox="0 0 24 24"><path d="M12 2C8.14 2 5 5.14 5 9c0 3.44 3.15 6.72 6.54 11.08.27.34.83.34 1.1 0C15.85 15.72 19 12.44 19 9c0-3.86-3.14-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5 14.5 7.62 14.5 9 13.38 11.5 12 11.5z"/></svg>  
-  <h3 style="margin: 10px 0;">আবদ্ধ জেলা</h3>  
-  <p style="font-size: 22px; font-weight: bold; color: black;">৬৪+</p>  
+  <h3 style="margin: 10px 0;">অবদ্ধ বিভাগ</h3>  
+  <p style="font-size: 22px; font-weight: bold; color: black;">৮
+
+</p>  
 </div>  
 
 <div style="flex: 1 1 200px; background: white; border-radius: 10px; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">  
   <svg width="50" height="50" fill=" #D32626" viewBox="0 0 24 24"><path d="M13 12h7v2h-7v7h-2v-7H4v-2h7V5h2v7z"/></svg>  
   <h3 style="margin: 10px 0;">সক্রিয় অনুরোধ</h3>  
-  <p style="font-size: 22px; font-weight: bold; color:  black;">১৮+</p>  
+  <p style="font-size: 22px; font-weight: bold; color:  black;">১৮</p>  
 </div>
 
 </div>  
@@ -375,37 +601,97 @@ transform: rotate(-90deg) translateX(-120px) rotate(90deg);
 <section style="max-width: 900px; margin: 40px auto; padding: 20px; background: transparent; border-radius: 10px; ">  
   <h2 style="color: black; text-align: center; margin-bottom: 20px;">রক্তবাতায়ন কী?</h2>  
   <p style="font-size: 16px; color: #333; line-height: 1.6; text-align: justify;">  
-    <strong>রক্তবাতায়ন</strong> একটি স্বয়ংক্রিয় রক্তসেবা, যা রক্ত খুঁজছেন এমন ব্যক্তিদের স্বেচ্ছাসেবী রক্তদাতাদের সাথে মাত্র এক মুহূর্তে SMS-এর মাধ্যমে যুক্ত করে। Rokto সবার জন্য সম্পূর্ণ বিনামূল্যে সেবা প্রদান করে থাকে।  
-  </p>    <h2 style="color: black; text-align: center; margin-top: 30px;">কেন রক্তবাতায়ন?</h2>  
+    <strong>রক্তবাতায়ন</strong> একটি স্বয়ংক্রিয় রক্তসেবা, যা রক্ত খুঁজছেন এমন ব্যক্তিদের স্বেচ্ছাসেবী রক্তদাতাদের সাথে মাত্র এক মুহূর্তে CALL-এর মাধ্যমে যুক্ত করে। রক্তবাতায়ন সবার জন্য সম্পূর্ণ বিনামূল্যে সেবা প্রদান করে থাকে।  
+  </p>   
+  <h2 style="color: black; text-align: center; margin-top: 30px;">কেন রক্তবাতায়ন?</h2>  
   <ul style="list-style: none; padding: 0; margin-top: 10px;">  
     <li style="background: #dff0d8; color: black; margin: 10px 0; padding: 10px 15px; border-radius: 5px;">  
-      ✅ ১০০% স্বয়ংক্রিয়  
+       ১০০% স্বয়ংক্রিয়  
     </li>  
     <li style="background: #d9edf7; color: #31708f; margin: 10px 0; padding: 10px 15px; border-radius: 5px;">  
-      💰 সম্পূর্ণ ফ্রি  
+       সম্পূর্ণ ফ্রি  
     </li>  
     <li style="background: #fcf8e3; color: #8a6d3b; margin: 10px 0; padding: 10px 15px; border-radius: 5px;">  
-      🕐 ২৪×৭ সেবা  
+       ২৪×৭ সেবা  
     </li>  
   </ul>  
 </section>  
   <!-- Footer -->  
   <footer>  
     <div class="footer-content">  
-      <p>চালিত হয়েছে ব্লাড ব্যাংক দ্বারা | © ২০২৫ সকল অধিকার সংরক্ষিত</p>  
-      <p>যোগাযোগ: <a href="mailto:help@bloodbank.com">help@bloodbank.com</a></p>  
+      <p>চালিত হয়েছে রক্তবাতায়ন দ্বারা | © ২০২৫ সকল অধিকার সংরক্ষিত</p>  
+      <p>যোগাযোগ: <a href="mailto:sohanur.mirdha@gmail.com">help@RoktoBatayan.com</a></p>  
       <div class="footer-links">  
         <a href="about.html">আমাদের সম্পর্কে</a> |  
         <a href="contact.html">যোগাযোগ</a>
       </div>  
     </div>  
     <div class="social-icons">  
-      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>  
-      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>  
-      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>  
-      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>  
+      <a href="https://www.facebook.com/md.sohanur.rahman.463545" target="_blank"><i class="fab fa-facebook-f"></i></a>  
+      <a href="mailto:sohanur.mirdha@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://wa.me/" target="_blank"><i class="fab fa-whatsapp"></i></a>  
     </div>  
-  </footer>    <!-- Scripts -->    <script>  
+  </footer>    
+  <!-- Scripts -->    
+  <script>  
+document.addEventListener("DOMContentLoaded", () => {
+  const hero = document.querySelector(".hero-text");
+  const h1 = hero.querySelector("h1");
+
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Add visible class when section is in view
+          hero.classList.add("visible");
+
+          // Optional: add floating effect after entrance
+          setTimeout(() => {
+            h1.classList.add("float");
+          }, 1200);
+
+          // Stop observing after animation runs
+          observer.unobserve(hero);
+        }
+      });
+    },
+    {
+      threshold: 0.5 // trigger when 50% of section is visible
+    }
+  );
+
+  observer.observe(hero);
+});
+  
+  
+  
+  
+  document.addEventListener("DOMContentLoaded", () => {
+  const section = document.querySelector(".donor-tips");
+  const tips = document.querySelectorAll(".tip");
+
+  function revealSection() {
+    const sectionTop = section.getBoundingClientRect().top;
+    const triggerPoint = window.innerHeight - 100;
+
+    if (sectionTop < triggerPoint) {
+      section.classList.add("visible");
+
+      tips.forEach((tip, index) => {
+        setTimeout(() => {
+          tip.classList.add("show");
+        }, index * 200); // delay for staggered animation
+      });
+    }
+  }
+
+  window.addEventListener("scroll", revealSection);
+  revealSection();
+});
+  
+  
+  
+  
     let slideIndex = 1;  
     showSlides(slideIndex);  
   
