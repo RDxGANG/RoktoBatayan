@@ -4,255 +4,205 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>আমাদের সম্পর্কে</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="icon" href="favicon.png">  
+  <link rel="icon" href="favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
   <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      font-family: 'Segoe UI', sans-serif;
-      background: #f4f4f4;
-      background-image: url(logo.jpg);
-      background-size: cover;
-      background-attachment: fixed;
-    }
-    
-    .container {
-      flex: 1;
-      max-width: 900px;
-      width: 90%;
-      margin: 40px auto;
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      background-image: url(logo.png);
-      background-size: 80px;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-    
-    header {
-      background-color: #D32626;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 999;
-      color: white;
-      flex-wrap: wrap;
-    }
-    
-    .header-content {
-      display: flex;
-      align-items: center;
-      flex-grow: 1;
-    }
-    
-    header h2 {
-      margin: 0;
-      font-size: 1.5rem;
-      margin-left: 15px;
-    }
-    
-    header a {
-      color: white;
-      text-decoration: none;
-      font-size: 15px;
-      padding: 8px 12px;
-      border: 1px solid white;
-      border-radius: 5px;
-      transition: 0.3s;
-      white-space: nowrap;
-      margin-left: auto;
-    }
-    
-    header a:hover {
-      background: white;
-      color: darkgreen;
-    }
-    
-    header img {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-    
-    .container h2 {
-      color: #D32626;
-      margin-bottom: 20px;
-    }
-    
-    .container p {
-      font-size: 16px;
-      line-height: 1.8;
+    /* Reset & base styles */
+    * { margin:0; padding:0; box-sizing:border-box; scroll-behavior: smooth; }
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.7;
       color: #333;
+      background: linear-gradient(to bottom, #f4f4f4 0%, #fff 100%);
     }
-    
-    footer {
+
+    /* Header */
+    header {
+      position: sticky;
+      top:0;
       background: #D32626;
-      color: #ccc;
-      text-align: center;
-      font-size: 14px;
-      font-weight: 300;
-      border-top: 2px solid #D32626;
-      box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
-      padding: 20px 10px;
-      margin-top: auto;
+      color:white;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:15px 30px;
+      z-index: 100;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
-    
-    .social-icons a {
-      color: white;
-      margin: 0 8px;
-      font-size: 18px;
+    header img { width:50px; height:50px; border-radius:50%; object-fit:cover; }
+    header h2 { margin-left:15px; font-weight:500; }
+    header .nav-link {
+      text-decoration:none;
+      color:white;
+      border:1px solid white;
+      padding:8px 15px;
+      border-radius:5px;
+      transition: all 0.3s ease;
     }
-    
-    .social-icons a:hover {
-      color: #ff4444;
+    header .nav-link:hover { background:white; color:#D32626; }
+
+    /* Hero Section */
+    .hero {
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:80px 20px;
+      background: linear-gradient(rgba(211,38,38,0.8), rgba(211,38,38,0.5)), url('logo.jpg') no-repeat center/cover;
+      color:white;
     }
-    
-    .footer-links a {
-      color: #eee;
-      text-decoration: none;
-      margin: 0 5px;
+    .hero h1 { font-size:3rem; margin-bottom:15px; animation: fadeInDown 1s ease; }
+    .hero p { font-size:1.2rem; max-width:700px; animation: fadeInUp 1s ease 0.3s; }
+
+    /* Container Sections */
+    .container {
+      max-width:1000px;
+      margin:50px auto;
+      padding:30px;
     }
-    
-    .footer-links a:hover {
-      color: red;
-      text-decoration: underline;
+
+    h2.section-title {
+      color:#D32626;
+      text-align:center;
+      margin-bottom:40px;
+      font-size:2rem;
+      position: relative;
     }
-    
-    hr {
-      border: 0;
-      height: 1px;
-      background: #ddd;
-      margin: 20px 0;
+    h2.section-title::after {
+      content:'';
+      width:60px;
+      height:3px;
+      background:#D32626;
+      display:block;
+      margin:10px auto 0;
+      border-radius:3px;
     }
-    
-    @media (max-width: 768px) {
-      header {
-        padding: 10px 15px;
-      }
-      
-      .header-content {
-        width: 100%;
-        justify-content: space-between;
-      }
-      
-      header h2 {
-        font-size: 1.3rem;
-        margin-left: 10px;
-      }
-      
-      header a {
-        margin-left: 0;
-        padding: 6px 10px;
-        font-size: 14px;
-      }
-      
-      .container {
-        padding: 20px;
-        margin: 20px auto;
-      }
-      
-      .footer-links {
-        display: flex;
-        flex-direction: column;
-      }
-      
-      .footer-links a {
-        margin: 5px 0;
-      }
+
+    /* Text Section */
+    .about-text p {
+      margin-bottom:20px;
+      font-size:1.1rem;
+      line-height:1.8;
+      color:#555;
+      opacity:0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s forwards;
     }
-    
-    @media (max-width: 480px) {
-      header {
-        flex-direction: row;
-        padding: 8px 10px;
-      }
-      
-      .header-content {
-        flex-wrap: nowrap;
-      }
-      
-      header img {
-        width: 40px;
-        height: 40px;
-      }
-      
-      header h2 {
-        font-size: 1.1rem;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-width: 150px;
-      }
-      
-      header a {
-        padding: 5px 8px;
-        font-size: 13px;
-      }
-      
-      .container {
-        width: 92%;
-        padding: 15px;
-      }
+    .about-text p:nth-child(1) { animation-delay:0.2s; }
+    .about-text p:nth-child(2) { animation-delay:0.4s; }
+
+    /* Team Section */
+    .team {
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:30px;
     }
+    .team-member {
+      background:white;
+      border-radius:15px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.1);
+      width:250px;
+      text-align:center;
+      padding:30px 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity:0;
+      transform: translateY(40px);
+      animation: fadeInUp 1s forwards;
+    }
+    .team-member:hover {
+      transform: translateY(-10px);
+      box-shadow:0 20px 35px rgba(0,0,0,0.2);
+    }
+    .team-member img {
+      width:120px;
+      height:120px;
+      border-radius:50%;
+      object-fit:cover;
+      margin-bottom:15px;
+    }
+    .team-member h3 { color:#D32626; margin-bottom:5px; }
+    .team-member p { font-size:0.95rem; color:#555; }
+
+    /* Footer */
+    footer {
+      background:#D32626;
+      color:#fff;
+      text-align:center;
+      padding:30px 20px;
+      position:relative;
+    }
+    footer a { color:#fff; text-decoration:none; margin:0 5px; transition:0.3s; }
+    footer a:hover { text-decoration:underline; color:#ff4444; }
+    .social-icons { margin-top:15px; }
+    .social-icons a { margin:0 10px; font-size:20px; }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      to { opacity:1; transform:translateY(0); }
+    }
+    @keyframes fadeInDown {
+      from { opacity:0; transform:translateY(-20px); }
+      to { opacity:1; transform:translateY(0); }
+    }
+
+    /* Responsive */
+    @media(max-width:768px) { .team { flex-direction:column; align-items:center; } }
   </style>
 </head>
 <body>
+  <!-- Header -->
   <header>
-    <div class="header-content">
-      <img src="logo.png" alt="logo" />
+    <div style="display:flex; align-items:center;">
+      <img src="logo.png" alt="logo">
       <h2>আমাদের সম্পর্কে</h2>
-      <a href="index.html"><i class="fa fa-home"></i> হোম</a>
     </div>
-  </header> 
+    <a class="nav-link" href="index.html"><i class="fa fa-home"></i> হোম</a>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>রক্তবাতায়ন - জীবন বাঁচানোর প্ল্যাটফর্ম</h1>
+    <p>আমাদের লক্ষ্য, প্রযুক্তির মাধ্যমে সমাজে রক্তদাতা ও প্রয়োজনমন্দদের সংযোগ সহজতর করা।</p>
+  </section>
+
+  <!-- About Text -->
+  <div class="container about-text">
+    <h2 class="section-title">আমাদের লক্ষ্য ও উদ্দেশ্য</h2>
+    <p>রক্তবাতায়ন একটি সামাজিক উদ্যোগ যা জরুরি রক্তের প্রয়োজনে মানুষের পাশে দাঁড়াতে সাহায্য করে। আমাদের উদ্দেশ্য হচ্ছে এমন একটি প্ল্যাটফর্ম তৈরি করা, যেখানে রক্তদাতারা এবং রক্তগ্রহীতারা একে অপরের সাথে দ্রুত এবং সহজে সংযুক্ত হতে পারে।</p>
+    <p>আমরা বিশ্বাস করি, প্রযুক্তির মাধ্যমে সমাজে একটি বড় পরিবর্তন আনা সম্ভব। এই প্ল্যাটফর্মের মাধ্যমে, আমরা স্বেচ্ছাসেবী রক্তদাতাদের তথ্য সুরক্ষিতভাবে সংরক্ষণ করে সহজে খুঁজে পাওয়ার সুবিধা প্রদান করি।</p>
+  </div>
+
+  <!-- Team Section -->
   <div class="container">
-    <h2>আমাদের লক্ষ্য ও উদ্দেশ্য</h2>
-    <p>
-      রক্তবাতায়ন একটি সামাজিক উদ্যোগ যা জরুরি রক্তের প্রয়োজনে মানুষের পাশে দাঁড়াতে সাহায্য করে। আমাদের উদ্দেশ্য হচ্ছে এমন একটি প্ল্যাটফর্ম তৈরি করা, যেখানে রক্তদাতারা এবং রক্তগ্রহীতারা একে অপরের সাথে দ্রুত এবং সহজে সংযুক্ত হতে পারে।
-    </p>
-    <p>
-      আমরা বিশ্বাস করি, প্রযুক্তির মাধ্যমে সমাজে একটি বড় পরিবর্তন আনা সম্ভব। এই প্ল্যাটফর্মের মাধ্যমে, আমরা স্বেচ্ছাসেবী রক্তদাতাদের তথ্য সুরক্ষিতভাবে সংরক্ষণ করে সহজে খুঁজে পাওয়ার সুবিধা প্রদান করি।
-    </p>
-    <h2>আমাদের সম্পর্কে</h2>
-    <p>
-      <strong>
-        Founder Name : MD Sohanur Rahman <br>
-        Education : Diploma in Computer science and technology<br>
-        Institute : Bangladesh polytechnic institute, Rajshahi <br>
-        Session : 22/23 <i>5th semester</i><br> 
-        city : Rajshahi 
-      </strong>
-    </p>
-    <hr>
-    <p>
-      <strong>
-        Co-Founder Name : Tahmid Asshab <br>
-        Education : Diploma in Computer science and technology<br>
-        Institute : Bangladesh polytechnic institute, Rajshahi <br>
-        Session : 22/23 <i>5th semester</i><br> 
-        city : Rajshahi 
-      </strong>
-    </p>
-  </div>  
-  
-  <footer>
-    <div class="footer-content">
-      <p>চালিত হয়েছে রক্তবাতায়ন দ্বারা | © ২০২৫ সকল অধিকার সংরক্ষিত</p>
-      <p>যোগাযোগ: <a href="mailto:sohanur.mirdha@gmail.com">help@RoktoBatayan.com</a></p>
-      <div class="footer-links">
-        <a href="about.html">আমাদের সম্পর্কে</a> 
-        <a href="contact.html">যোগাযোগ</a>
+    <h2 class="section-title">আমাদের টিম</h2>
+    <div class="team">
+      <div class="team-member" style="animation-delay:0.2s;">
+        <h3>MD Sohanur Rahman</h3>
+        <p><strong>Founder</strong> <br> Diploma in Computer Science and Technology From Bangladesh Polytechnic Institute, Rajshahi <br> Session: 22-23</p>
+      </div>
+      <div class="team-member" style="animation-delay:0.4s;">
+        <h3>Tahmid Asshab</h3>
+        <p>Co-Founder <br> Diploma in Computer Science and Technology From Bangladesh Polytechnic Institute, Rajshahi <br> Session: 22-23</p>
+      </div>
+        <div class="team-member" style="animation-delay:0.2s;">
+        <h3>Eabir Al Sabil</h3>
+        <p>Department of laboratory technology From Institute of health technology, IHT <br> Session: 2022-23</p>
+      </div>
+       <div class="team-member" style="animation-delay:0.2s;">
+        <h3>OUR SUPPORTER</h3>
+        <p>Laboratory Students  Development Association - LSDA</p>
       </div>
     </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>চালিত হয়েছে রক্তবাতায়ন দ্বারা | © ২০২৫ সকল অধিকার সংরক্ষিত</p>
+    <p>যোগাযোগ: <a href="mailto:sohanur.mirdha@gmail.com">help@RoktoBatayan.com</a></p>
     <div class="social-icons">
       <a href="https://www.facebook.com/md.sohanur.rahman.463545" target="_blank"><i class="fab fa-facebook"></i></a>
       <a href="https://wa.me/+" target="_blank"><i class="fab fa-whatsapp"></i></a>
