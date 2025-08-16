@@ -1,132 +1,126 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>যোগাযোগ করুন</title>
-    <link rel="icon" href="favicon.png">  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <style>
-  html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>যোগাযোগ করুন</title>
+<link rel="icon" href="favicon.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+<style>
+/* General Styles */
+* { box-sizing: border-box; scroll-behavior: smooth; }
+body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #f4f4f4; color: #333; }
+
+/* Header */
+header {
+  background-color: #D32626;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 30px; position: sticky; top: 0; z-index: 999;
+  color: white; box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
-    
-    
-.container {
-  flex: 1;
+header h2 { margin: 0; font-size: 24px; }
+header a {
+  color: white; text-decoration: none; font-size: 16px;
+  padding: 8px 14px; border: 1px solid white; border-radius: 5px; transition: 0.3s;
 }
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #f4f4f4;
-      background-image: url(logo.jpg);
-      background-size: cover;
-      background-attachment: fixed;
-    
-    }
-    header {
-      background-color: #D32626;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 999;
-      color: white;
-    }
-    header h1 {
-      margin: 0;
-      margin-left: 30px;
-    }
-    header a {
-      color: white;
-      text-decoration: none;
-      font-size: 16px;
-      padding: 8px 12px;
-      border: 1px solid white;
-      border-radius: 5px;
-      transition: 0.3s;
-    }
-    header a:hover {
-      background: white;
-      color: #D32626;
-    }
-    .container {
-      max-width: 900px;
-      margin: 40px auto;
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      text-align: center;
-      
-    }
-    .container h2 {
-      color: #D32626;
-      margin-bottom: 20px;
-    }
-    .contact-icons {
-      margin: 20px 0;
-    }
-    .contact-icons a {
-      margin: 10px;
-      font-size: 30px;
-      color: #D32626;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-    .contact-icons a:hover {
-      color: crimson;
-    }
-    .contact-info p {
-      font-size: 16px;
-      color: #333;
-      margin: 10px 0;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #D32626;
-      color: #eee;
-      font-size: 14px;
-      margin-top: 40px;
-      
-    }
-    header img {
-      width:50px;
-    }
-    img{
-      width: 90px;
-    }
-  </style>
+header a:hover { background: white; color: #D32626; }
+header img { width: 50px; }
+
+/* Hero Section with red overlay */
+.hero {
+  position: relative;
+  background: url('logo.jpg') no-repeat center center/cover;
+  height: 60vh; display: flex; align-items: center; justify-content: center;
+  text-align: center; color: white; overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top:0; left:0; width:100%; height:100%;
+  background: rgba(211,38,38,0.6); /* Red overlay like About page */
+  mix-blend-mode: multiply;
+}
+.hero-content { position: relative; z-index: 2; }
+.hero h1 { font-size: 48px; margin: 0; opacity: 0; transform: translateY(50px); transition: 1s ease-out; }
+.hero p { font-size: 20px; margin-top: 15px; opacity: 0; transform: translateY(50px); transition: 1s ease-out 0.3s; }
+
+/* Container */
+.container { max-width: 1000px; margin: 60px auto; padding: 0 20px; }
+
+/* Section Animations */
+.section { opacity: 0; transform: translateY(50px); transition: all 0.8s ease-out; }
+.section.visible { opacity: 1; transform: translateY(0); }
+
+/* Contact Icons */
+.contact-icons { display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; margin-bottom: 40px; }
+.contact-icons a { font-size: 40px; color: #D32626; transition: 0.3s; }
+.contact-icons a:hover { color: crimson; transform: scale(1.2); }
+
+/* Contact Info */
+.contact-info { text-align: center; font-size: 18px; }
+.contact-info p { margin: 10px 0; }
+.contact-info img { width: 120px; margin-top: 20px; border-radius: 0; border: none; /* Removed circle */ }
+
+/* Footer */
+footer { text-align: center; padding: 25px; background: #D32626; color: #eee; font-size: 14px; margin-top: 60px; box-shadow: 0 -2px 10px rgba(0,0,0,0.2); }
+</style>
 </head>
 <body>
-  <header>
-    <img src="logo.png" alt="logo" />
-    <h2>যোগাযোগ করুন</h2>
-    <a href="index.html"><i class="fa fa-home"></i> হোম</a>
-  </header>  <div class="container">
-    <h2>আমাদের সাথে যোগাযোগ করুন</h2>
-    <div class="contact-icons">
-    <a href="https://www.facebook.com/md.sohanur.rahman.463545" target="_blank"><i class="fab fa-facebook"></i></a>
-      <a href="https://wa.me/+" target="_blank"><i class="fab fa-whatsapp"></i></a>
-      <a href="mailto:sohanur.mirdha@gmail.com"><i class="fas fa-envelope"></i></a>
-    </div>
-    <div class="contact-info">
-      <p>ইমেইল: sohanur.mirdha@gmail.com</p>
-      <p>ঠিকানা: রাজশাহী, বাংলাদেশ</p>
-       <img src="lo.png" alt="photo" />
-    </div>
-  </div>  
 
-  <footer>
-    &copy; ২০২৫ রক্তবাতায়ন | সকল অধিকার সংরক্ষিত
-  </footer>
+<header>
+  <img src="logo.png" alt="logo" />
+  <h2>যোগাযোগ করুন</h2>
+  <a href="/"><i class="fa fa-home"></i> হোম</a>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>যোগাযোগ করুন</h1>
+    <p>আপনি আমাদের যে কোন সময় যোগাযোগ করতে পারেন</p>
+  </div>
+</section>
+
+<div class="container">
+
+  <div class="contact-icons section">
+    <a href="https://www.facebook.com/md.sohanur.rahman.463545" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://wa.me/+" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="mailto:sohanur.mirdha@gmail.com"><i class="fas fa-envelope"></i></a>
+  </div>
+
+  <div class="contact-info section">
+    <p>ইমেইল: sohanur.mirdha@gmail.com</p>
+    <p>ঠিকানা: রাজশাহী, বাংলাদেশ</p>
+    <img src="lo.png" alt="photo" />
+  </div>
+
+</div>
+
+<footer>
+  &copy; ২০২৫ রক্তবাতায়ন | সকল অধিকার সংরক্ষিত
+</footer>
+
+<script>
+// Scroll-triggered animations
+const sections = document.querySelectorAll('.section');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.2 });
+sections.forEach(section => observer.observe(section));
+
+// Hero section animation
+window.addEventListener('load', () => {
+  document.querySelector('.hero h1').style.opacity = 1;
+  document.querySelector('.hero h1').style.transform = 'translateY(0)';
+  document.querySelector('.hero p').style.opacity = 1;
+  document.querySelector('.hero p').style.transform = 'translateY(0)';
+});
+</script>
+
 </body>
 </html>
