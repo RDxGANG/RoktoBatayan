@@ -209,5 +209,22 @@
       <a href="mailto:sohanur.mirdha@gmail.com"><i class="fas fa-envelope"></i></a>
     </div>
   </footer>
+  <script>
+  // Function to animate elements when they enter the viewport
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        entry.target.style.animationPlayState = 'running';
+        observer.unobserve(entry.target); // Stop observing after animating
+      }
+    });
+  }, { threshold: 0.1 }); // Trigger when 10% visible
+
+  // Select all elements with animations
+  document.querySelectorAll('.about-text p, .team-member, .hero h1, .hero p').forEach(el => {
+    el.style.animationPlayState = 'paused'; // Start paused
+    observer.observe(el);
+  });
+  </script>
 </body>
 </html>
